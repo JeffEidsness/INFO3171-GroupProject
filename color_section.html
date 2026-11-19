@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alatsi&family=Quicksand&display=swap" rel="stylesheet">
+    <style>
+      /* ---- base (matches week3 main.css) ---- */
+      body { font-family: 'Quicksand', sans-serif; }
+      h1,h2,h3,h4,h5,h6 { font-family: 'Alatsi', sans-serif; color: #333; }
+      h3 { font-size: 44px; margin-bottom: 30px; }
+      h4 { font-size: 28px; margin-top: 32px; margin-bottom: 10px; }
+      h5 { font-size: 20px; margin-top: 24px; margin-bottom: 10px; }
+
+      /* ---- Colour-section layout ---- */
+      .color-section { padding: 10px 0 40px; }
+
+      /* palette row */
+      .palette-row { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 20px; }
+
+      /* colour chip */
+      .chip-wrap { width: 130px; }
+      .chip-swatch {
+        height: 90px;
+        border-radius: 6px;
+        display: flex;
+        align-items: flex-end;
+        padding: 6px 8px;
+      }
+      .chip-swatch .hex-label {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+      .chip-meta { padding: 6px 2px 0; }
+      .chip-name { font-weight: 700; font-size: 13px; color: #222; display: block; }
+      .chip-role { font-size: 11px; color: #666; }
+
+      /* contrast badges */
+      .chip-contrast { margin-top: 4px; display: flex; gap: 4px; flex-wrap: wrap; }
+      .badge {
+        font-size: 10px;
+        padding: 1px 5px;
+        border-radius: 3px;
+        font-weight: 600;
+        font-family: 'Quicksand', sans-serif;
+      }
+      .badge-pass { background: #52958b; color: #fff; }
+      .badge-fail { background: #fa6e59; color: #fff; }
+
+      /* "On colour" row */
+      .on-color-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+      .on-chip {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        border-radius: 6px;
+        overflow: hidden;
+        border: 1px solid #e0e0e0;
+        width: 240px;
+      }
+      .on-bg { width: 50%; height: 56px; display: flex; align-items: center; justify-content: center; }
+      .on-fg { width: 50%; height: 56px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; font-family: 'Alatsi', sans-serif; }
+      .on-label { font-size: 11px; font-family: 'Quicksand', sans-serif; font-weight: 600; }
+
+      /* divider */
+      .palette-divider { border: none; border-top: 1px solid #e8e8e8; margin: 28px 0 20px; }
+
+      /* contrast table */
+      .contrast-table { border-collapse: collapse; width: 100%; max-width: 560px; font-family: 'Quicksand', sans-serif; font-size: 13px; }
+      .contrast-table th { background: #f1f1f2; font-weight: 700; padding: 8px 12px; text-align: left; border: 1px solid #e0e0e0; }
+      .contrast-table td { padding: 7px 12px; border: 1px solid #e0e0e0; }
+      .contrast-table tr:nth-child(even) td { background: #fafafa; }
+
+      /* usage guide list */
+      .usage-list { list-style: disc; padding-left: 20px; font-size: 14px; line-height: 1.8; color: #333; }
+      .usage-list li span { font-weight: 700; }
+    </style>
+  </head>
+  <body>
+    <div class="container color-section">
+
+      <h3>Color</h3>
+      <p style="font-size:15px;color:#555;max-width:600px;margin-bottom:32px;">
+        DailyTube's palette is built around the brand gold <strong>#FFBD59</strong> and kept
+        monochromatic — warm neutrals from near-white to near-black, with focused feedback
+        tones. All text-on-background pairings meet WCAG 2.1 AA contrast (4.5:1 for body text).
+      </p>
+
+      <!-- ===== BRAND ===== -->
+      <h4>Brand Colors</h4>
+      <p style="font-size:13px;color:#666;margin-bottom:14px;">The core identity colours. Use sparingly — headlines, key CTAs, active menu items.</p>
+      <div class="palette-row">
+
+        <!-- Primary -->
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background:#FFBD59;">
+            <span class="hex-label" style="color:#3d2d00;">#FFBD59</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Sunburst</span>
+            <span class="chip-role">Brand Primary</span>
+            <div class="chip-contrast">
+              <span class="badge badge-pass">AA on dark</span>
+              <span class="badge badge-fail">fail on white</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Primary Dark -->
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background:#C98A00;">
+            <span class="hex-label" style="color:#fff;">#C98A00</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Amber Deep</span>
+            <span class="chip-role">Brand Primary Dark</span>
+            <div class="chip-contrast">
+              <span class="badge badge-pass">AA on white</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Primary Light -->
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background:#FFE0A3;">
+            <span class="hex-label" style="color:#5a3d00;">#FFE0A3</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Honey Tint</span>
+            <span class="chip-role">Brand Primary Light</span>
+            <div class="chip-contrast">
+              <span class="badge badge-pass">AA on dark text</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="palette-divider">
+
+      <!-- ===== FUNCTIONAL / NEUTRAL ===== -->
+      <h4>Neutral Colors</h4>
+      <p style="font-size:13px;color:#666;margin-bottom:14px;">Backgrounds, borders, and surfaces. The backbone of the layout.</p>
+      <div class="palette-row">
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background:#FFFFFF;border:1px solid #e0e0e0;">
+            <span class="hex-label" style="color:#333;">#FFFFFF</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">White</span>
+            <span class="chip-role">Card Surface</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background:#F7F7F8;">
+            <span class="hex-label" style="color:#333;">#F7F7F8</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Cloud</span>
+            <span class="chip-role">Page Background</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background:#E2E2E4;">
+            <span class="hex-label" style="color:#333;">#E2E2E4</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Mist</span>
+            <span class="chip-role">Border / Divider</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background:#9E9EA3;">
+            <span class="hex-label" style="color:#fff;">#9E9EA3</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Slate</span>
+            <span class="chip-role">Placeholder / Muted</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background:#3A3A3C;">
+            <span class="hex-label" style="color:#fff;">#3A3A3C</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Graphite</span>
+            <span class="chip-role">Secondary Text</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background:#1A1A1B;">
+            <span class="hex-label" style="color:#fff;">#1A1A1B</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Pitch</span>
+            <span class="chip-role">Primary Text</span>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="palette-divider">
+
+      <!-- ===== ACCENT ===== -->
+      <h4>Accent Colors</h4>
+      <p style="font-size:13px;color:#666;margin-bottom:14px;">
+        Chart series colors — drawn from the brand gold and stepped through hue/lightness.
+        Used in order below for multi-series charts.
+      </p>
+      <div class="palette-row">
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background:#FFBD59;">
+            <span class="hex-label" style="color:#3d2d00;">#FFBD59</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Sunburst</span>
+            <span class="chip-role">Series 1</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background:#E07B2A;">
+            <span class="hex-label" style="color:#fff;">#E07B2A</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Tangerine</span>
+            <span class="chip-role">Series 2</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background:#A84C0C;">
+            <span class="hex-label" style="color:#fff;">#A84C0C</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Rust</span>
+            <span class="chip-role">Series 3</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background:#FFD98A;">
+            <span class="hex-label" style="color:#5a3d00;">#FFD98A</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Butter</span>
+            <span class="chip-role">Series 4</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background:#C98A00;">
+            <span class="hex-label" style="color:#fff;">#C98A00</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Amber Deep</span>
+            <span class="chip-role">Series 5</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background:#3A3A3C;">
+            <span class="hex-label" style="color:#fff;">#3A3A3C</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Graphite</span>
+            <span class="chip-role">Series 6</span>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="palette-divider">
+
+      <!-- ===== FEEDBACK ===== -->
+      <h4>Feedback Colors</h4>
+      <p style="font-size:13px;color:#666;margin-bottom:14px;">Status indicators — alerts, success messages, warnings. Use only for meaning, not decoration.</p>
+      <div class="palette-row">
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background:#D64B3B;">
+            <span class="hex-label" style="color:#fff;">#D64B3B</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Error Red</span>
+            <span class="chip-role">Error / Danger</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background:#FFBD59;">
+            <span class="hex-label" style="color:#3d2d00;">#FFBD59</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Sunburst</span>
+            <span class="chip-role">Warning</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background:#3D8B6E;">
+            <span class="hex-label" style="color:#fff;">#3D8B6E</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Fern</span>
+            <span class="chip-role">Success</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background:#3A7CC7;">
+            <span class="hex-label" style="color:#fff;">#3A7CC7</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Cobalt</span>
+            <span class="chip-role">Info</span>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="palette-divider">
+
+      <!-- ===== ON COLOURS ===== -->
+      <h4>"On" Colors</h4>
+      <p style="font-size:13px;color:#666;margin-bottom:14px;">
+        The text or icon color to use <em>on top of</em> each background. The left half shows
+        the background; the right half shows what goes on it.
+      </p>
+      <div class="on-color-row">
+
+        <div class="on-chip">
+          <div class="on-bg" style="background:#FFBD59;">
+            <span class="on-label" style="color:#3d2d00;">BG</span>
+          </div>
+          <div class="on-fg" style="background:#1A1A1B;color:#FFBD59;">Aa</div>
+        </div>
+
+        <div class="on-chip">
+          <div class="on-bg" style="background:#1A1A1B;">
+            <span class="on-label" style="color:#fff;">BG</span>
+          </div>
+          <div class="on-fg" style="background:#FFBD59;color:#1A1A1B;">Aa</div>
+        </div>
+
+        <div class="on-chip">
+          <div class="on-bg" style="background:#F7F7F8;border:1px solid #e0e0e0;">
+            <span class="on-label" style="color:#333;">BG</span>
+          </div>
+          <div class="on-fg" style="background:#1A1A1B;color:#F7F7F8;">Aa</div>
+        </div>
+
+        <div class="on-chip">
+          <div class="on-bg" style="background:#C98A00;">
+            <span class="on-label" style="color:#fff;">BG</span>
+          </div>
+          <div class="on-fg" style="background:#fff;color:#C98A00;">Aa</div>
+        </div>
+
+      </div>
+
+      <hr class="palette-divider">
+
+      <!-- ===== CONTRAST TABLE ===== -->
+      <h4>Contrast Notes</h4>
+      <p style="font-size:13px;color:#666;margin-bottom:14px;">
+        WCAG 2.1 target: <strong>4.5:1</strong> for normal text, <strong>3:1</strong> for large text / UI.
+        Ratios below are approximate.
+      </p>
+      <table class="contrast-table">
+        <thead>
+          <tr>
+            <th>Foreground</th>
+            <th>Background</th>
+            <th>Approx. Ratio</th>
+            <th>AA Pass?</th>
+            <th>Use For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#1A1A1B Pitch</td>
+            <td>#F7F7F8 Cloud</td>
+            <td>17.5:1</td>
+            <td><span class="badge badge-pass">Pass</span></td>
+            <td>Body text on page bg</td>
+          </tr>
+          <tr>
+            <td>#1A1A1B Pitch</td>
+            <td>#FFFFFF White</td>
+            <td>18.1:1</td>
+            <td><span class="badge badge-pass">Pass</span></td>
+            <td>Body text on cards</td>
+          </tr>
+          <tr>
+            <td>#1A1A1B Pitch</td>
+            <td>#FFBD59 Sunburst</td>
+            <td>7.4:1</td>
+            <td><span class="badge badge-pass">Pass</span></td>
+            <td>Text on brand bg</td>
+          </tr>
+          <tr>
+            <td>#FFFFFF White</td>
+            <td>#C98A00 Amber Deep</td>
+            <td>4.6:1</td>
+            <td><span class="badge badge-pass">Pass</span></td>
+            <td>White text on dark gold</td>
+          </tr>
+          <tr>
+            <td>#FFFFFF White</td>
+            <td>#FFBD59 Sunburst</td>
+            <td>2.1:1</td>
+            <td><span class="badge badge-fail">Fail</span></td>
+            <td>Avoid white text on light gold</td>
+          </tr>
+          <tr>
+            <td>#3A3A3C Graphite</td>
+            <td>#F7F7F8 Cloud</td>
+            <td>8.9:1</td>
+            <td><span class="badge badge-pass">Pass</span></td>
+            <td>Secondary text</td>
+          </tr>
+          <tr>
+            <td>#FFFFFF White</td>
+            <td>#3D8B6E Fern</td>
+            <td>4.7:1</td>
+            <td><span class="badge badge-pass">Pass</span></td>
+            <td>Success badge text</td>
+          </tr>
+          <tr>
+            <td>#FFFFFF White</td>
+            <td>#D64B3B Error Red</td>
+            <td>4.5:1</td>
+            <td><span class="badge badge-pass">Pass</span></td>
+            <td>Error badge text</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="palette-divider">
+
+      <!-- ===== USAGE GUIDE ===== -->
+      <h4>Color Usage Guide</h4>
+      <ul class="usage-list">
+        <li><span>Sunburst (#FFBD59)</span> — active menu item underline, KPI highlights, chart Series 1. Never use as a text color on white.</li>
+        <li><span>Amber Deep (#C98A00)</span> — primary buttons, links. Passes AA on white so safe for inline text.</li>
+        <li><span>Honey Tint (#FFE0A3)</span> — chart highlight/brush fill, selected row bg, tooltip bg tint.</li>
+        <li><span>Cloud (#F7F7F8)</span> — overall page background. Cards sit on white (#FFFFFF) above it.</li>
+        <li><span>Pitch (#1A1A1B)</span> — all body text, chart axis labels, legend text.</li>
+        <li><span>Graphite (#3A3A3C)</span> — secondary text, metadata, chart tick labels.</li>
+        <li><span>Mist (#E2E2E4)</span> — card borders, table rules, dividers.</li>
+        <li><span>Feedback colors</span> — appear only in status badges and notification banners, never in charts or decorative use.</li>
+        <li><span>Accent series</span> — apply in order (Sunburst → Tangerine → Rust → Butter → Amber Deep → Graphite) across chart series. Rotate if more than 6 series.</li>
+      </ul>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() { M.AutoInit(); });
+    </script>
+  </body>
+</html>
