@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typography</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alatsi&family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/typography.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a href="../index.html" class="site-logo">
+        <img src="../assets/img/logo.png" alt="DailyTube home" />
+      </a>
+      <nav class="site-nav" aria-label="Pattern library">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="colour.html">Colour</a></li>
+          <li>
+            <a href="typography.html" class="active" aria-current="page"
+              >Typography</a
+            >
+          </li>
+          <li><a href="layouts.html">Layouts</a></li>
+          <li><a href="components.html">Components</a></li>
+          <li><a href="dataviz.html">Data Viz</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <main>
+        <h1>Typography</h1>
+        <p class="lead">
+          DailyTube uses two typefaces: a bold display face that echoes the
+          logo, and a rounded, friendly body face that reflects the brand's
+          creativity and positivity.
+        </p>
+
+        <!-- ==================================================
+       PATTERN: Typefaces
+       ================================================== -->
+        <section class="pattern" id="typefaces">
+          <h2>Typefaces</h2>
+          <p>
+            Alatsi is the display typeface for headings, menus and KPI numbers.
+            Quicksand is used for body text, buttons, forms and all chart data.
+            Each has a full sans-serif fallback stack, so text stays readable if
+            a font fails to load.
+          </p>
+
+          <div class="pattern-demo">
+            <div class="specimen-grid">
+              <div class="font-specimen">
+                <p class="specimen-role">Display: headings, menus, KPIs</p>
+                <p class="specimen-aa specimen-display">Aa</p>
+                <p class="specimen-name specimen-display">Alatsi</p>
+                <p class="specimen-chars specimen-display">
+                  ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
+                  abcdefghijklmnopqrstuvwxyz<br />
+                  0123456789
+                </p>
+              </div>
+
+              <div class="font-specimen">
+                <p class="specimen-role">Body: text, buttons, chart data</p>
+                <p class="specimen-aa specimen-body">Aa</p>
+                <p class="specimen-name specimen-body">Quicksand</p>
+                <p class="specimen-chars specimen-body">
+                  ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
+                  abcdefghijklmnopqrstuvwxyz<br />
+                  0123456789
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h3>Usage</h3>
+          <ul>
+            <li>
+              Do: use Alatsi for headings, the navigation menu and KPI numbers.
+            </li>
+            <li>
+              Do: use Quicksand for everything else, including all chart text.
+            </li>
+            <li>Don't: add a third typeface. Two is the maximum.</li>
+            <li>
+              Don't: make Alatsi bold. It has one weight, and browsers fake bold
+              badly.
+            </li>
+            <li>Don't: use decorative fonts in charts.</li>
+          </ul>
+
+          <h3>Accessibility</h3>
+          <p>
+            Both fonts end in a system font stack (system-ui, Segoe UI, Roboto,
+            Arial, sans-serif), so every device shows a clear sans-serif even if
+            the web fonts fail to load.
+          </p>
+
+          <h3>Code</h3>
+          <pre><code>/* variables.css */
+--font-fallback: system-ui, -apple-system, "Segoe UI", Roboto,
+                 "Helvetica Neue", Arial, sans-serif;
+--font-display: 'Alatsi', var(--font-fallback);
+--font-body:    'Quicksand', var(--font-fallback);
+--font-data:    'Quicksand', var(--font-fallback);</code></pre>
+        </section>
+
+        <!-- ==================================================
+       PATTERN: Type scale
+       ================================================== -->
+        <section class="pattern" id="type-scale">
+          <h2>Type scale</h2>
+          <p>
+            Sizes follow a 1.25 ratio from a 16px base, so every level is
+            clearly different from the next. Sizes use rem so they respect the
+            user's browser font settings. Headings shrink on screens narrower
+            than 600px.
+          </p>
+
+          <div class="pattern-demo">
+            <div class="type-row">
+              <span class="type-meta">H1 · --fs-h1 · 3.052rem / 49px</span>
+              <span class="sample-h1">Dashboard</span>
+            </div>
+            <div class="type-row">
+              <span class="type-meta">H2 · --fs-h2 · 2.441rem / 39px</span>
+              <span class="sample-h2">Channel trends</span>
+            </div>
+            <div class="type-row">
+              <span class="type-meta">H3 · --fs-h3 · 1.953rem / 31px</span>
+              <span class="sample-h3">Top categories</span>
+            </div>
+            <div class="type-row">
+              <span class="type-meta">H4 · --fs-h4 · 1.563rem / 25px</span>
+              <span class="sample-h4">Card title</span>
+            </div>
+            <div class="type-row">
+              <span class="type-meta">H5 · --fs-h5 · 1.25rem / 20px</span>
+              <span class="sample-h5">Minor heading</span>
+            </div>
+            <div class="type-row">
+              <span class="type-meta">Lead · --fs-lead · 1.125rem / 18px</span>
+              <span class="sample-lead">Introductory paragraph text</span>
+            </div>
+            <div class="type-row">
+              <span class="type-meta">Body · --fs-body · 1rem / 16px</span>
+              <span class="sample-body"
+                >Body text for descriptions and content</span
+              >
+            </div>
+            <div class="type-row">
+              <span class="type-meta"
+                >Small · --fs-small · 0.875rem / 14px</span
+              >
+              <span class="sample-small">Captions and metadata</span>
+            </div>
+            <div class="type-row">
+              <span class="type-meta">XS · --fs-xs · 0.75rem / 12px</span>
+              <span class="sample-xs">Fine print, the minimum size</span>
+            </div>
+          </div>
+
+          <h3>Usage</h3>
+          <ul>
+            <li>Do: use one H1 per page, for the page title.</li>
+            <li>
+              Do: pick a heading by its place in the page structure, not its
+              size.
+            </li>
+            <li>Don't: type sizes directly. Always use a --fs token.</li>
+            <li>Don't: go below 12px (--fs-xs) for any text.</li>
+          </ul>
+
+          <h3>Accessibility</h3>
+          <p>
+            Rem units scale with the user's browser font size, so people who
+            enlarge text get a proportionally larger page. Headings in order
+            (H1, then H2, then H3) let screen readers navigate the page.
+          </p>
+
+          <h3>Code</h3>
+          <pre><code>/* variables.css */
+--fs-h1: 3.052rem;
+--fs-h2: 2.441rem;
+--fs-h3: 1.953rem;
+--fs-h4: 1.563rem;
+--fs-h5: 1.25rem;
+--fs-body: 1rem;
+--fs-small: 0.875rem;
+--fs-xs: 0.75rem;
+
+/* typography.css */
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }</code></pre>
+        </section>
+
+        <!-- ==================================================
+       PATTERN: Weights & line height
+       ================================================== -->
+        <section class="pattern" id="weights">
+          <h2>Weights &amp; line height</h2>
+          <p>
+            Quicksand comes in four weights. Body text uses Medium (500) because
+            Regular (400) is thin and harder to read on screen. Paragraphs use a
+            1.6 line height; headings and chart labels use a tighter 1.2.
+          </p>
+
+          <div class="pattern-demo">
+            <p class="weight-sample fw-regular">
+              Regular 400: DailyTube gives everyone a voice
+            </p>
+            <p class="weight-sample fw-medium">
+              Medium 500: DailyTube gives everyone a voice
+            </p>
+            <p class="weight-sample fw-semibold">
+              Semibold 600: DailyTube gives everyone a voice
+            </p>
+            <p class="weight-sample fw-bold">
+              Bold 700: DailyTube gives everyone a voice
+            </p>
+          </div>
+
+          <h3>Usage</h3>
+          <ul>
+            <li>Medium (500): body text and descriptions.</li>
+            <li>Semibold (600): labels, buttons, axis titles, KPI labels.</li>
+            <li>Bold (700): short emphasis only, never whole paragraphs.</li>
+            <li>Regular (400): Alatsi headings (its only weight).</li>
+          </ul>
+
+          <h3>Accessibility</h3>
+          <p>
+            Avoid Regular 400 for small text. Thin strokes at small sizes lose
+            contrast, especially on low-quality screens.
+          </p>
+
+          <h3>Code</h3>
+          <pre><code>--fw-regular:  400;
+--fw-medium:   500;
+--fw-semibold: 600;
+--fw-bold:     700;
+
+--lh-tight: 1.2;  /* headings, chart labels */
+--lh-body:  1.6;  /* paragraphs */</code></pre>
+        </section>
+
+        <!-- ==================================================
+       PATTERN: Chart typography
+       ================================================== -->
+        <section class="pattern" id="chart-typography">
+          <h2>Chart typography</h2>
+          <p>
+            Every chart uses the same text hierarchy: a title, axis titles, tick
+            labels and, for single-value charts, a large KPI number. The chart
+            title is larger than any chart text but smaller than section
+            headings, which keeps titles and charts in balance.
+          </p>
+
+          <div class="pattern-demo">
+            <div class="demo-chart-card">
+              <p class="chart-title">YouTube channels by category: India</p>
+
+              <svg
+                class="demo-chart"
+                viewBox="0 0 420 200"
+                role="img"
+                aria-label="Example bar chart showing chart text styles"
+              >
+                <!-- bars -->
+                <rect
+                  class="demo-bar"
+                  x="120"
+                  y="20"
+                  width="260"
+                  height="28"
+                  rx="3"
+                />
+                <rect
+                  class="demo-bar"
+                  x="120"
+                  y="60"
+                  width="130"
+                  height="28"
+                  rx="3"
+                />
+                <rect
+                  class="demo-bar"
+                  x="120"
+                  y="100"
+                  width="52"
+                  height="28"
+                  rx="3"
+                />
+
+                <!-- category labels (y axis) -->
+                <text class="tick-label" x="112" y="38" text-anchor="end">
+                  Music
+                </text>
+                <text class="tick-label" x="112" y="78" text-anchor="end">
+                  Entertainment
+                </text>
+                <text class="tick-label" x="112" y="118" text-anchor="end">
+                  Education
+                </text>
+
+                <!-- x axis -->
+                <line class="axis-line" x1="120" y1="140" x2="380" y2="140" />
+                <text class="tick-label" x="120" y="156" text-anchor="middle">
+                  0
+                </text>
+                <text class="tick-label" x="250" y="156" text-anchor="middle">
+                  5
+                </text>
+                <text class="tick-label" x="380" y="156" text-anchor="middle">
+                  10
+                </text>
+
+                <!-- axis titles -->
+                <text class="axis-title" x="250" y="186" text-anchor="middle">
+                  Number of channels
+                </text>
+                <text
+                  class="axis-title"
+                  x="-74"
+                  y="14"
+                  text-anchor="middle"
+                  transform="rotate(-90)"
+                >
+                  Category
+                </text>
+              </svg>
+            </div>
+
+            <div class="demo-chart-card kpi-demo">
+              <p class="kpi-label">Most subscribed channel</p>
+              <p class="kpi-value">T-Series</p>
+            </div>
+          </div>
+
+          <h3>Sizes</h3>
+          <ul>
+            <li>Chart title: Alatsi, --fs-chart-title (18px)</li>
+            <li>Axis title: Quicksand Semibold, --fs-axis-title (14px)</li>
+            <li>Tick labels: Quicksand Medium, --fs-tick (12px)</li>
+            <li>Legend and tooltip: Quicksand, 14px</li>
+            <li>
+              KPI value: Alatsi, --fs-kpi-value (40px); KPI label: Quicksand
+              Semibold uppercase, 14px
+            </li>
+          </ul>
+
+          <h3>Usage</h3>
+          <ul>
+            <li>Do: give every chart a title and both axis titles.</li>
+            <li>
+              Do: style chart text with classes, never with D3 size attributes.
+            </li>
+            <li>
+              Don't: rotate tick labels. Use a horizontal bar chart for long
+              category names instead.
+            </li>
+          </ul>
+
+          <h3>Accessibility</h3>
+          <p>
+            Tick labels never go below 12px. Chart text is dark grey on white
+            for strong contrast, and every chart SVG has an aria-label
+            describing what it shows.
+          </p>
+
+          <h3>Code</h3>
+          <pre><code>&lt;!-- HTML --&gt;
+&lt;p class="chart-title"&gt;YouTube channels by category: India&lt;/p&gt;
+
+/* D3: apply the classes instead of setting sizes */
+svg.append("text")
+  .attr("class", "axis-title")
+  .text("Number of channels");
+
+/* typography.css */
+.tick-label,
+.tick text {
+  font-family: var(--font-data);
+  font-size: var(--fs-tick);
+  fill: var(--color-text-secondary);
+}</code></pre>
+        </section>
+      </main>
+    </main>
+
+    <footer class="site-footer">
+      <p>INFO3171 User Interface &amp; Data Visualization</p>
+      <p>Malcolm Grace, Jeff Eidsness, Mariana Parada, Sarah McDermid</p>
+      <p>&copy; 2026 DailyTube</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DailyTube Pattern Library</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alatsi&family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/typography.css" />
+    <link rel="stylesheet" href="css/components.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a href="index.html" class="site-logo">
+        <img src="assets/img/logo.png" alt="DailyTube home" />
+      </a>
+
+      <nav class="site-nav" aria-label="Pattern library">
+        <ul>
+          <li>
+            <a href="index.html" class="active" aria-current="page">Home</a>
+          </li>
+          <li><a href="pattern-library/colour.html">Colour</a></li>
+          <li><a href="pattern-library/typography.html">Typography</a></li>
+          <li><a href="pattern-library/layouts.html">Layouts</a></li>
+          <li><a href="pattern-library/components.html">Components</a></li>
+          <li><a href="pattern-library/dataviz.html">Data Viz</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <h1>DailyTube Pattern Library</h1>
+        <p class="lead">UI patterns for the DailyTube management dashboard.</p>
+        <p>
+          This library documents the colours,typography, layouts, components and
+          chart styles used to build the DailyTube management dashboard, so
+          every part of it looks and works the same way.
+        </p>
+      </section>
+
+      <section class="library-sections">
+        <h2>Explore the library</h2>
+
+        <div class="card-grid">
+          <a href="pattern-library/colour.html" class="section-card">
+            <h3>Colour</h3>
+            <p>
+              Brand gold palette, neutrals, feedback colours and contrast rules.
+            </p>
+            <span class="card-link">View &rarr;</span>
+          </a>
+
+          <a href="pattern-library/typography.html" class="section-card">
+            <h3>Typography</h3>
+            <p>Display and body fonts, type scale and chart text.</p>
+            <span class="card-link">View &rarr;</span>
+          </a>
+
+          <a href="pattern-library/layouts.html" class="section-card">
+            <h3>Page Layouts</h3>
+            <p>Dashboard grid, card anatomy and responsive breakpoints.</p>
+            <span class="card-link">View &rarr;</span>
+          </a>
+
+          <a href="pattern-library/components.html" class="section-card">
+            <h3>UI Components</h3>
+            <p>Buttons, inputs, navigation, cards and their states.</p>
+            <span class="card-link">View &rarr;</span>
+          </a>
+
+          <a href="pattern-library/dataviz.html" class="section-card">
+            <h3>Data Visualization</h3>
+            <p>Chart types and styling for the dashboard.</p>
+            <span class="card-link">View &rarr;</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="component-list">
+        <h2>Components used in the dashboard</h2>
+        <p>Every UI component the DailyTube dashboard uses, and why.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Component</th>
+              <th scope="col">Used for</th>
+              <th scope="col">Pattern</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Navigation menu</td>
+              <td>Moving between pages, with the current page highlighted</td>
+              <td>
+                <a href="pattern-library/components.html#navigation">View</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Button</td>
+              <td>Changing a chart's style</td>
+              <td><a href="pattern-library/components.html#button">View</a></td>
+            </tr>
+            <tr>
+              <td>Dropdown select</td>
+              <td>Choosing a country for the channels-by-category chart</td>
+              <td>
+                <a href="pattern-library/components.html#dropdown">View</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Radio / checkbox / toggle</td>
+              <td>Switching chart options</td>
+              <td><a href="pattern-library/components.html#toggle">View</a></td>
+            </tr>
+            <tr>
+              <td>Chart card</td>
+              <td>Rounded container for every chart</td>
+              <td>
+                <a href="pattern-library/components.html#chart-card">View</a>
+              </td>
+            </tr>
+            <tr>
+              <td>KPI card</td>
+              <td>The three single-value charts</td>
+              <td>
+                <a href="pattern-library/components.html#kpi-card">View</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Tooltip</td>
+              <td>Showing data details on hover</td>
+              <td>
+                <a href="pattern-library/components.html#tooltip">View</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Interactive legend</td>
+              <td>Showing and hiding chart series</td>
+              <td><a href="pattern-library/components.html#legend">View</a></td>
+            </tr>
+            <tr>
+              <td>Brush highlight</td>
+              <td>Selecting points on the scatter plot</td>
+              <td><a href="pattern-library/components.html#brush">View</a></td>
+            </tr>
+            <tr>
+              <td>Zoom controls</td>
+              <td>Zooming in and resetting a chart</td>
+              <td><a href="pattern-library/components.html#zoom">View</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>INFO3171 User Interface &amp; Data Visualization</p>
+      <p>Malcolm Grace, Jeff Eidsness, Mariana Parada, Sarah McDermid</p>
+      <p>&copy; 2026 DailyTube</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <!--DAILYTUBE PATTERN LIBRARY: PAGE TEMPLATE
+    =============================================================
+    Your page in pattern-library/ already has this head, header and footer.
+    Only work inside <main>.
+
+    RULES
+    1. Use tokens only: var(--color-...), var(--fs-...), var(--space-...).
+       Never type a hex code, font size or pixel spacing directly.
+       Need a value that doesn't exist? Ask Jeff to add a token.
+    2. Every pattern uses the <section class="pattern"> block below,
+       in this order: description, demo, usage, accessibility, code.
+    3. Keep the class names "pattern" and "pattern-demo" exactly.
+       Change the id, the heading and the content.
+    4. Demo-only styles go in YOUR css file (brand.css, components.css,
+       or dataviz.css), never in a <style> block or style="" attribute.
+       Exception: style="background: var(--token)" on a swatch that
+       shows a token.
+    5. Inside <pre><code>, write < as &lt; and > as &gt;
+       Keep lines inside <pre> flush left; indentation shows on screen.
+    6. Components page: each section needs the id the index page links to:
+       navigation, button, dropdown, toggle, chart-card,
+       kpi-card, tooltip, legend, brush, zoom-->
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PAGE NAME</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alatsi&family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/typography.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <!-- Add your own section's CSS file last, e.g. ../css/brand.css -->
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a href="../index.html" class="site-logo">
+        <img src="../assets/img/logo.png" alt="DailyTube home" />
+      </a>
+      <nav class="site-nav" aria-label="Pattern library">
+        <ul>
+          <!-- Put class="active" aria-current="page" on THIS page's link only -->
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="colour.html">Colour</a></li>
+          <li><a href="typography.html">Typography</a></li>
+          <li><a href="layouts.html">Layouts</a></li>
+          <li><a href="components.html">Components</a></li>
+          <li><a href="dataviz.html">Data Viz</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>PAGE NAME</h1>
+      <p class="lead">One sentence describing what this page covers.</p>
+
+      <!--
+           PATTERN: Name of pattern
+           Copy this whole <section> once per pattern.
+           -->
+      <section class="pattern" id="pattern-id">
+        <h2>Pattern name</h2>
+        <p>
+          What this pattern is, and when to use it. Link it to a client or
+          assignment requirement where you can.
+        </p>
+
+        <div class="pattern-demo">
+          <!-- The live, working example goes here.
+               Show every state: default, hover, focus, active, disabled. -->
+        </div>
+
+        <h3>Usage</h3>
+        <ul>
+          <li>Do: ...</li>
+          <li>Do: ...</li>
+          <li>Don't: ...</li>
+        </ul>
+
+        <h3>Accessibility</h3>
+        <p>
+          Contrast, keyboard use, labels, focus states, screen reader notes.
+        </p>
+
+        <h3>Code</h3>
+        <pre><code>&lt;button class="btn btn-primary"&gt;Example&lt;/button&gt;
+
+.btn-primary {
+  background: var(--color-sunburst);
+  color: var(--color-on-sunburst);
+}</code></pre>
+      </section>
+
+      <!-- Next pattern: copy the <section> above again here. -->
+    </main>
+
+    <footer class="site-footer">
+      <p>INFO3171 User Interface &amp; Data Visualization</p>
+      <p>Malcolm Grace, Jeff Eidsness, Mariana Parada, Sarah McDermid</p>
+      <p>&copy; 2026 DailyTube</p>
+    </footer>
+  </body>
+</html>

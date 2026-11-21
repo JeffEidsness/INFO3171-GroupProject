@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Layouts</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alatsi&family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/layouts.css" />
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/typography.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a href="../index.html" class="site-logo">
+        <img src="../assets/img/logo.png" alt="DailyTube home" />
+      </a>
+      <nav class="site-nav" aria-label="Pattern library">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="colour.html">Colour</a></li>
+          <li><a href="typography.html">Typography</a></li>
+          <li>
+            <a href="layouts.html" class="active" aria-current="page"
+              >Layouts</a
+            >
+          </li>
+          <li><a href="components.html">Components</a></li>
+          <li><a href="dataviz.html">Data Viz</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <main>
+        <h1>Page Layouts</h1>
+        <p class="lead">
+          How the DailyTube dashboard is arranged: the order of content, and the structure of each card.
+        </p>
+
+        <!--PATTERN: Dashboard layout-->
+        <section class="pattern" id="dashboard-layout">
+          <h2>Dashboard layout</h2>
+          <p>
+            The dashboard follows an inverted pyramid: the most important
+            information sits at the top left, followed by trends and then
+            detail. The three single-value KPI cards come first so management
+            sees the headline numbers within five seconds. The six charts follow
+            in a grid below.
+          </p>
+
+          <div class="pattern-demo">
+            <div class="wire">
+              <div class="wire-box wire-header">Header: logo + title</div>
+
+              <div class="wire-kpis">
+                <div class="wire-box wire-kpi">
+                  KPI 1<br /><span>Top category</span>
+                </div>
+                <div class="wire-box wire-kpi">
+                  KPI 2<br /><span>Top country</span>
+                </div>
+                <div class="wire-box wire-kpi">
+                  KPI 3<br /><span>Top channel</span>
+                </div>
+              </div>
+
+              <div class="wire-charts">
+                <div class="wire-box wire-chart">
+                  Chart 1<br /><span>Category share</span>
+                </div>
+                <div class="wire-box wire-chart">
+                  Chart 2<br /><span>Likes vs subscribers</span>
+                </div>
+                <div class="wire-box wire-chart">
+                  Chart 3<br /><span>Channels by country</span>
+                </div>
+                <div class="wire-box wire-chart">
+                  Chart 4<br /><span>Average views by year</span>
+                </div>
+                <div class="wire-box wire-chart">
+                  Chart 5<br /><span>Quarterly income</span>
+                </div>
+                <div class="wire-box wire-chart">
+                  Chart 6<br /><span>Categories by country</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h3>Usage</h3>
+          <ul>
+            <li>
+              Do: place KPI cards first. They answer the headline questions
+              immediately.
+            </li>
+            <li>
+              Do: put related charts next to each other, e.g. the two country
+              charts.
+            </li>
+            <li>
+              Do: keep the dashboard to nine visualizations or fewer (5–9 is the
+              guideline).
+            </li>
+            <li>
+              Don't: hide charts in tabs. Everything important should be visible
+              without extra clicks.
+            </li>
+          </ul>
+
+          <h3>Accessibility</h3>
+          <p>
+            The visual order matches the order in the HTML, so screen reader and
+            keyboard users move through the dashboard in the same sequence that
+            sighted users read it.
+          </p>
+
+          <h3>Code</h3>
+          <pre><code>&lt;main class="dashboard"&gt;
+  &lt;section class="kpi-row"&gt;
+    &lt;!-- 3 KPI cards --&gt;
+  &lt;/section&gt;
+  &lt;section class="dash-grid"&gt;
+    &lt;!-- 6 chart cards --&gt;
+  &lt;/section&gt;
+&lt;/main&gt;</code></pre>
+        </section>
+
+
+        <!--PATTERN: Card-->
+        <section class="pattern" id="card-anatomy">
+          <h2>Card anatomy</h2>
+          <p>
+            Every chart lives in a card with the same structure. The client
+            asked for individual boxes with rounded borders, so every card uses
+            a 16px radius. This pattern covers the card's structure and spacing;
+            its interactive states are documented on the Components page.
+          </p>
+
+          <div class="pattern-demo">
+            <div class="anatomy-card">
+              <div class="anatomy-header">
+                <span class="anatomy-marker">1</span>
+                <p class="chart-title">Chart title</p>
+                <div class="anatomy-controls">
+                  <span class="anatomy-marker">2</span>
+                  <span class="anatomy-control">Country ▾</span>
+                </div>
+              </div>
+              <div class="anatomy-chart">
+                <span class="anatomy-marker">3</span>
+                Chart area (D3 SVG)
+              </div>
+              <p class="anatomy-footer">
+                <span class="anatomy-marker">4</span>
+                Source: Top 100 YouTubers dataset
+              </p>
+            </div>
+
+            <ol class="anatomy-key">
+              <li>
+                <strong>Title</strong>: Alatsi, --fs-chart-title. Describes what
+                the chart shows.
+              </li>
+              <li>
+                <strong>Controls</strong>: optional dropdowns, buttons or
+                toggles, aligned right.
+              </li>
+              <li>
+                <strong>Chart area</strong>: the D3 SVG, scaling to the card's
+                width.
+              </li>
+              <li>
+                <strong>Footer</strong>: optional source or note, --fs-xs.
+              </li>
+            </ol>
+          </div>
+
+          <h3>Specs</h3>
+          <ul>
+            <li>Corner radius: --radius-lg (16px)</li>
+            <li>Padding: --space-5 (24px)</li>
+            <li>Background: --color-surface (white) on --color-bg (Cloud)</li>
+            <li>Border: 1px --color-border; shadow: --shadow-card</li>
+            <li>Gap between title row and chart: --space-4 (16px)</li>
+          </ul>
+
+          <h3>Accessibility</h3>
+          <p>
+            Each card is a section with the chart title as its heading, and the
+            chart SVG has an aria-label summarizing the data.
+          </p>
+
+          <h3>Code</h3>
+          <pre><code>&lt;section class="chart-card"&gt;
+  &lt;div class="chart-card-header"&gt;
+    &lt;h2 class="chart-title"&gt;Chart title&lt;/h2&gt;
+    &lt;div class="chart-controls"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="chart-area"&gt;&lt;!-- D3 SVG --&gt;&lt;/div&gt;
+&lt;/section&gt;
+
+.chart-card {
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}</code></pre>
+        
+      </main>
+    </main>
+
+    <footer class="site-footer">
+      <p>INFO3171 User Interface &amp; Data Visualization</p>
+      <p>Malcolm Grace, Jeff Eidsness, Mariana Parada, Sarah McDermid</p>
+      <p>&copy; 2026 DailyTube</p>
+    </footer>
+  </body>
+</html>

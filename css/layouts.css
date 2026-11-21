@@ -1,0 +1,119 @@
+/* Layouts page*/
+
+/* Wireframe (dashboard layout demo)*/
+.wire {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.wire-box {
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-size: var(--fs-small);
+  text-align: center;
+}
+
+.wire-box span {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  color: var(--color-text-secondary);
+}
+
+.wire-header {
+  background: var(--color-pitch);
+  color: var(--color-cloud);
+}
+
+.wire-kpis,
+.wire-charts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.wire-kpi {
+  background: var(--color-honey-tint);
+}
+
+.wire-chart {
+  min-height: 90px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+/* Card anatomy*/
+.anatomy-card {
+  max-width: 480px;
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.anatomy-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.anatomy-header .chart-title {
+  flex: 1;
+  margin: 0;
+}
+
+.anatomy-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.anatomy-control {
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-small);
+}
+
+.anatomy-chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 160px;
+  background: var(--color-bg);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  font-size: var(--fs-small);
+}
+
+.anatomy-footer {
+  margin: var(--space-3) 0 0;
+  font-size: var(--fs-xs);
+  color: var(--color-text-secondary);
+}
+
+/* Numbered markers that match the key list */
+.anatomy-marker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--color-sunburst);
+  color: var(--color-on-sunburst);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+}
+
+.anatomy-key {
+  margin-top: var(--space-5);
+  padding-left: var(--space-5);
+  font-size: var(--fs-small);
+}
