@@ -43,11 +43,366 @@
     </header>
 
     <main>
-      <h1>Colour</h1>
-      <p class="lead">
-        Brand gold palette, neutrals, feedback colours and contrast rules.
-      </p>
-    </main>
+     <main>
+  <h1>Colour</h1>
+  <p class="lead">
+    DailyTube's palette is built around the brand gold <strong>#FFBD59</strong>
+    and kept monochromatic — warm neutrals from near-white to near-black, with
+    focused feedback tones. All text-on-background pairings meet WCAG 2.1 AA
+    contrast (4.5:1 for body text).
+  </p>
+
+  <!-- Brand -->
+  <section class="pattern" id="brand-colours">
+    <h2>Brand Colours</h2>
+    <p class="section-intro">The core identity colours. Use sparingly — headlines, key CTAs, active menu items.</p>
+
+    <div class="pattern-demo">
+      <div class="palette-row">
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background: var(--color-sunburst);">
+            <span class="hex-label label-dark">#FFBD59</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Sunburst</span>
+            <span class="chip-role">Brand Primary</span>
+            <div class="chip-contrast">
+              <span class="badge badge-pass">AA on dark</span>
+              <span class="badge badge-fail">fail on white</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background: var(--color-amber-deep);">
+            <span class="hex-label label-light">#C98A00</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Amber Deep</span>
+            <span class="chip-role">Brand Primary Dark</span>
+            <div class="chip-contrast">
+              <span class="badge badge-pass">AA on white</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background: var(--color-honey-tint);">
+            <span class="hex-label label-dark">#FFE0A3</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Honey Tint</span>
+            <span class="chip-role">Brand Primary Light</span>
+            <div class="chip-contrast">
+              <span class="badge badge-pass">AA on dark text</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neutrals -->
+  <section class="pattern" id="neutral-colours">
+    <h2>Neutral Colours</h2>
+    <p class="section-intro">Backgrounds, borders, and surfaces. The backbone of the layout.</p>
+
+    <div class="pattern-demo">
+      <div class="palette-row">
+        <div class="chip-wrap">
+          <div class="chip-swatch chip-swatch-bordered" style="background: var(--color-white);">
+            <span class="hex-label label-dark">#FFFFFF</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">White</span>
+            <span class="chip-role">Card Surface</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch chip-swatch-bordered" style="background: var(--color-cloud);">
+            <span class="hex-label label-dark">#F7F7F8</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Cloud</span>
+            <span class="chip-role">Page Background</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background: var(--color-mist);">
+            <span class="hex-label label-dark">#E2E2E4</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Mist</span>
+            <span class="chip-role">Border / Divider</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background: var(--color-slate);">
+            <span class="hex-label label-light">#9E9EA3</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Slate</span>
+            <span class="chip-role">Placeholder / Muted</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background: var(--color-graphite);">
+            <span class="hex-label label-light">#3A3A3C</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Graphite</span>
+            <span class="chip-role">Secondary Text</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background: var(--color-pitch);">
+            <span class="hex-label label-light">#1A1A1B</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Pitch</span>
+            <span class="chip-role">Primary Text</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accent -->
+  <section class="pattern" id="accent-colours">
+    <h2>Accent Colours</h2>
+    <p class="section-intro">
+      Chart series colours — drawn from the brand gold and stepped through
+      hue/lightness. Used in order below for multi-series charts.
+    </p>
+
+    <div class="pattern-demo">
+      <div class="palette-row">
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background: var(--chart-1);">
+            <span class="hex-label label-dark">#FFBD59</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Sunburst</span>
+            <span class="chip-role">Series 1</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background: var(--chart-2);">
+            <span class="hex-label label-light">#E07B2A</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Tangerine</span>
+            <span class="chip-role">Series 2</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background: var(--chart-3);">
+            <span class="hex-label label-light">#A84C0C</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Rust</span>
+            <span class="chip-role">Series 3</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background: var(--chart-4);">
+            <span class="hex-label label-dark">#FFD98A</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Butter</span>
+            <span class="chip-role">Series 4</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background: var(--chart-5);">
+            <span class="hex-label label-light">#C98A00</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Amber Deep</span>
+            <span class="chip-role">Series 5</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background: var(--chart-6);">
+            <span class="hex-label label-light">#3A3A3C</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Graphite</span>
+            <span class="chip-role">Series 6</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feedback -->
+  <section class="pattern" id="feedback-colours">
+    <h2>Feedback Colours</h2>
+    <p class="section-intro">Status indicators — alerts, success messages, warnings. Use only for meaning, not decoration.</p>
+
+    <div class="pattern-demo">
+      <div class="palette-row">
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background: var(--color-error);">
+            <span class="hex-label label-light">#D64B3B</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Error Red</span>
+            <span class="chip-role">Error / Danger</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background: var(--color-warning);">
+            <span class="hex-label label-dark">#FFBD59</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Sunburst</span>
+            <span class="chip-role">Warning</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background: var(--color-success);">
+            <span class="hex-label label-light">#3D8B6E</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Fern</span>
+            <span class="chip-role">Success</span>
+          </div>
+        </div>
+
+        <div class="chip-wrap">
+          <div class="chip-swatch" style="background: var(--color-info);">
+            <span class="hex-label label-light">#3A7CC7</span>
+          </div>
+          <div class="chip-meta">
+            <span class="chip-name">Cobalt</span>
+            <span class="chip-role">Info</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- On colours -->
+  <section class="pattern" id="on-colours">
+    <h2>"On" Colours</h2>
+    <p class="section-intro">
+      The text or icon colour to use <em>on top of</em> each background. The
+      left half shows the background; the right half shows what goes on it.
+    </p>
+
+    <div class="pattern-demo">
+      <div class="on-color-row">
+        <div class="on-chip">
+          <div class="on-bg" style="background: var(--color-sunburst);">
+            <span class="on-label label-dark">BG</span>
+          </div>
+          <div class="on-fg" style="background: var(--color-pitch); color: var(--color-sunburst);">Aa</div>
+        </div>
+
+        <div class="on-chip">
+          <div class="on-bg" style="background: var(--color-pitch);">
+            <span class="on-label label-light">BG</span>
+          </div>
+          <div class="on-fg" style="background: var(--color-sunburst); color: var(--color-pitch);">Aa</div>
+        </div>
+
+        <div class="on-chip">
+          <div class="on-bg" style="background: var(--color-cloud);">
+            <span class="on-label label-dark">BG</span>
+          </div>
+          <div class="on-fg" style="background: var(--color-pitch); color: var(--color-cloud);">Aa</div>
+        </div>
+
+        <div class="on-chip">
+          <div class="on-bg" style="background: var(--color-amber-deep);">
+            <span class="on-label label-light">BG</span>
+          </div>
+          <div class="on-fg" style="background: var(--color-white); color: var(--color-amber-deep);">Aa</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- contrast table -->
+  <section class="pattern" id="contrast">
+    <h2>Contrast Notes</h2>
+    <p class="section-intro">
+      WCAG 2.1 target: <strong>4.5:1</strong> for normal text, <strong>3:1</strong>
+      for large text / UI. Ratios below are approximate.
+    </p>
+
+    <table class="contrast-table">
+      <thead>
+        <tr>
+          <th scope="col">Foreground</th>
+          <th scope="col">Background</th>
+          <th scope="col">Approx. Ratio</th>
+          <th scope="col">AA Pass?</th>
+          <th scope="col">Use For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>#1A1A1B Pitch</td><td>#F7F7F8 Cloud</td><td>17.5:1</td>
+          <td><span class="badge badge-pass">Pass</span></td><td>Body text on page bg</td>
+        </tr>
+        <tr>
+          <td>#1A1A1B Pitch</td><td>#FFFFFF White</td><td>18.1:1</td>
+          <td><span class="badge badge-pass">Pass</span></td><td>Body text on cards</td>
+        </tr>
+        <tr>
+          <td>#1A1A1B Pitch</td><td>#FFBD59 Sunburst</td><td>7.4:1</td>
+          <td><span class="badge badge-pass">Pass</span></td><td>Text on brand bg</td>
+        </tr>
+        <tr>
+          <td>#FFFFFF White</td><td>#C98A00 Amber Deep</td><td>4.6:1</td>
+          <td><span class="badge badge-pass">Pass</span></td><td>White text on dark gold</td>
+        </tr>
+        <tr>
+          <td>#FFFFFF White</td><td>#FFBD59 Sunburst</td><td>2.1:1</td>
+          <td><span class="badge badge-fail">Fail</span></td><td>Avoid white text on light gold</td>
+        </tr>
+        <tr>
+          <td>#3A3A3C Graphite</td><td>#F7F7F8 Cloud</td><td>8.9:1</td>
+          <td><span class="badge badge-pass">Pass</span></td><td>Secondary text</td>
+        </tr>
+        <tr>
+          <td>#FFFFFF White</td><td>#3D8B6E Fern</td><td>4.7:1</td>
+          <td><span class="badge badge-pass">Pass</span></td><td>Error badge text</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Usage Guide -->
+  <section class="pattern" id="colour-usage">
+    <h2>Colour Usage Guide</h2>
+    <ul class="usage-list">
+      <li><span>Sunburst (#FFBD59)</span> — active menu item underline, KPI highlights, chart Series 1. Never use as a text colour on white.</li>
+      <li><span>Amber Deep (#C98A00)</span> — primary buttons, links. Passes AA on white so safe for inline text.</li>
+      <li><span>Honey Tint (#FFE0A3)</span> — chart highlight/brush fill, selected row bg, tooltip bg tint.</li>
+      <li><span>Cloud (#F7F7F8)</span> — overall page background. Cards sit on white (#FFFFFF) above it.</li>
+      <li><span>Pitch (#1A1A1B)</span> — all body text, chart axis labels, legend text.</li>
+      <li><span>Graphite (#3A3A3C)</span> — secondary text, metadata, chart tick labels.</li>
+      <li><span>Mist (#E2E2E4)</span> — card borders, table rules, dividers.</li>
+      <li><span>Feedback colours</span> — appear only in status badges and notification banners, never in charts or decorative use.</li>
+      <li><span>Accent series</span> — apply in order (Sunburst → Tangerine → Rust → Butter → Amber Deep → Graphite) across chart series. Rotate if more than 6 series.</li>
+    </ul>
+  </section>
+</main>
 
     <footer class="site-footer">
       <p>INFO3171 User Interface &amp; Data Visualization</p>

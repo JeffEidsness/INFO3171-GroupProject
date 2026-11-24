@@ -1,0 +1,150 @@
+.section-intro {
+  font-size: var(--fs-small);
+  color: var(--color-text-secondary);
+}
+
+/* Palette row  */
+.palette-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+/* Colour chip*/
+.chip-wrap {
+  width: 130px;
+}
+
+.chip-swatch {
+  display: flex;
+  align-items: flex-end;
+  height: 90px;
+  padding: 6px 8px;
+  border-radius: var(--radius-md);
+}
+
+.chip-swatch-bordered {
+  border: 1px solid var(--color-border);
+}
+
+.hex-label {
+  font-size: 11px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.5px;
+}
+
+/* Text colour for labels sitting on swatches */
+.label-dark {
+  color: var(--color-pitch);
+}
+.label-light {
+  color: var(--color-white);
+}
+
+.chip-meta {
+  padding: 6px 2px 0;
+}
+
+.chip-name {
+  display: block;
+  font-size: 13px;
+  font-weight: var(--fw-bold);
+  color: var(--color-text);
+}
+
+.chip-role {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+/* contrast badge */
+.chip-contrast {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.badge {
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: var(--fw-semibold);
+}
+
+.badge-pass {
+  background: var(--color-success);
+  color: var(--color-white);
+}
+.badge-fail {
+  background: var(--color-error);
+  color: var(--color-white);
+}
+
+/* on Colours */
+.on-color-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.on-chip {
+  display: flex;
+  align-items: center;
+  width: 240px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.on-bg,
+.on-fg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 56px;
+}
+
+.on-fg {
+  font-family: var(--font-display);
+  font-size: 20px;
+}
+
+.on-label {
+  font-size: 11px;
+  font-weight: var(--fw-semibold);
+}
+
+/* Contrast table  */
+.contrast-table {
+  width: 100%;
+  max-width: 560px;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.contrast-table th {
+  padding: 8px 12px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  font-weight: var(--fw-bold);
+  text-align: left;
+}
+
+.contrast-table td {
+  padding: 7px 12px;
+  border: 1px solid var(--color-border);
+}
+
+/* ---- Usage list ---- */
+.usage-list {
+  padding-left: 20px;
+  font-size: var(--fs-small);
+  line-height: 1.8;
+  list-style: disc;
+}
+
+.usage-list li span {
+  font-weight: var(--fw-bold);
+}
