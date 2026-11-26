@@ -1,58 +1,424 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data Visualization</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Alatsi&family=Quicksand:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Visualization</title>
 
-    <link rel="stylesheet" href="../css/variables.css" />
-    <link rel="stylesheet" href="../css/base.css" />
-    <link rel="stylesheet" href="../css/typography.css" />
-    <link rel="stylesheet" href="../css/components.css" />
-    <link rel="stylesheet" href="../css/dataviz.css" />
-  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alatsi&family=Quicksand:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
-  <body>
-    <header class="site-header">
-      <a href="../index.html" class="site-logo">
-        <img src="../assets/img/logo.png" alt="DailyTube home" />
-      </a>
-      <nav class="site-nav" aria-label="Pattern library">
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="colour.html">Colour</a></li>
-          <li><a href="typography.html">Typography</a></li>
-          <li><a href="layouts.html">Layouts</a></li>
-          <li><a href="components.html">Components</a></li>
-          <li>
-            <a href="dataviz.html" class="active" aria-current="page"
-              >Data Viz</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </header>
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/typography.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/dataviz.css" />
+</head>
 
-    <main>
-      <h1>Data Visualization</h1>
-      <p class="lead">Chart types and styling for the dashboard.</p>
-    </main>
+<body>
+  <header class="site-header">
+    <a href="../index.html" class="site-logo">
+      <img src="../assets/img/logo.png" alt="DailyTube home" />
+    </a>
+    <nav class="site-nav" aria-label="Pattern library">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="colour.html">Colour</a></li>
+        <li><a href="typography.html">Typography</a></li>
+        <li><a href="layouts.html">Layouts</a></li>
+        <li><a href="components.html">Components</a></li>
+        <li>
+          <a href="dataviz.html" class="active" aria-current="page">Data Viz</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-    <footer class="site-footer">
-      <p>INFO3171 User Interface &amp; Data Visualization</p>
-      <p>Malcolm Grace, Jeff Eidsness, Mariana Parada, Sarah McDermid</p>
-      <p>&copy; 2026 DailyTube</p>
-    </footer>
-  </body>
+
+  <main>
+
+    <h1>Data Visualization</h1>
+    <p class="lead">
+      Chart types and styling for the dashboard.
+    </p>
+
+    <!-- KPI COMPONENTS -->
+    <section class="kpi-grid" id="kpi-container"></section>
+
+    <h2>Charts</h2>
+
+    <!-- INTERACTIVE GRAPH SECTION -->
+    <h3>Example of Interactive Graph</h3>
+
+    <div class="chart-grid">
+
+      <!-- Interactive Chart Card -->
+      <div class="chart-card chart-wide">
+
+        <div class="xl-chart">
+
+          <p class="xl-title">
+            Views by Channel Category
+          </p>
+
+          <div class="xl-row">
+
+            <svg id="svg1" viewBox="0 0 600 300" role="img" aria-label="Bar graph of views by channel category">
+            </svg>
+
+            <div class="legend" id="legend1"></div>
+
+          </div>
+        </div>
+
+        <!-- Brush Highlight -->
+        <div class="brush-readout">
+
+          <span id="info1">
+            Hover a bar for its value.
+            Drag across bars to select a range.
+          </span>
+
+          <button type="button" class="brush-clear" id="clear1" hidden>
+            Clear selection
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- IMAGE CHART SECTION -->
+    <h3>Graphs That Are Just Images</h3>
+
+    <div class="chart-grid">
+
+      <!-- Grouped Bar Chart -->
+      <div class="chart-card">
+
+        <img src="img/grouped-bar.png" alt="Grouped bar chart: uploads by category and quarter">
+
+        <div class="footer">
+          Grouped bar chart. Source: DailyTube analytics
+        </div>
+
+      </div>
+
+
+      <!-- Stacked Bar Chart -->
+      <div class="chart-card">
+
+        <img src="img/stacked-bar.png" alt="Stacked bar chart: engagement breakdown by category">
+
+        <div class="footer">
+          Stacked bar chart. Source: DailyTube analytics
+        </div>
+
+      </div>
+
+
+      <!-- Horizontal Bar Chart -->
+      <div class="chart-card">
+
+        <img src="img/horizontal-bar.png" alt="Horizontal bar chart: top channels by subscribers">
+
+        <div class="footer">
+          Horizontal bar chart. Source: DailyTube analytics
+        </div>
+
+      </div>
+
+
+      <!-- Line Chart -->
+      <div class="chart-card">
+
+        <img src="img/line-chart.png" alt="Line chart: monthly views trend">
+
+        <div class="footer">
+          Line chart. Source: DailyTube analytics
+        </div>
+
+      </div>
+
+
+      <!-- Stacked Area Chart -->
+      <div class="chart-card">
+
+        <img src="img/stacked-area.png" alt="Stacked area chart: cumulative watch hours">
+
+        <div class="footer">
+          Stacked area chart. Source: DailyTube analytics
+        </div>
+
+      </div>
+
+
+      <!-- Scatter Plot -->
+      <div class="chart-card">
+
+        <img src="img/scatter-plot.png" alt="Scatter plot: views versus likes per video">
+
+        <div class="footer">
+          Scatter plot. Source: DailyTube analytics
+        </div>
+
+      </div>
+
+
+      <!-- Pie Chart -->
+      <div class="chart-card">
+
+        <img src="img/pie-chart.png" alt="Pie chart: share of views by category">
+
+        <div class="footer">
+          Pie chart. Source: DailyTube analytics
+        </div>
+
+      </div>
+
+
+      <!-- Donut Chart -->
+      <div class="chart-card">
+
+        <img src="img/donut-chart.png" alt="Donut chart: views by device type">
+
+        <div class="footer">
+          Donut chart. Source: DailyTube analytics
+        </div>
+
+      </div>
+
+    </div>
+
+    <section class="component-library">
+      <h2>Component Library</h2>
+      <p class="lead">Reusable UI components for the DailyTube dashboard.</p>
+
+      <div class="component-grid">
+
+        <article class="component-item">
+          <h3>Chart Card</h3>
+          <p>Displays charts inside a rounded container.</p>
+          <div class="component-preview">
+            <div class="preview-chart">📊 Chart Preview</div>
+          </div>
+        </article>
+
+        <article class="component-item">
+          <h3>KPI Card</h3>
+          <p>Displays important metrics and performance changes.</p>
+          <div class="component-preview">
+            <strong>2.4 Billion</strong>
+            <span class="kpi-badge up">▲ 12%</span>
+          </div>
+        </article>
+
+        <article class="component-item">
+          <h3>Tooltip</h3>
+          <p>Shows additional information when hovering over chart data.</p>
+          <div class="component-preview">
+            <span class="preview-tooltip">Views: 420M</span>
+          </div>
+        </article>
+
+        <article class="component-item">
+          <h3>Interactive Legend</h3>
+          <p>Allows users to show or hide chart categories.</p>
+          <div class="component-preview">
+            <span class="dot" style="--c:#FFBD59"></span> Music
+            <span class="dot" style="--c:#E07B2A"></span> Gaming
+          </div>
+        </article>
+
+        <article class="component-item">
+          <h3>Brush Highlight</h3>
+          <p>Highlights selected data across a chart.</p>
+          <div class="component-preview">
+            <span class="brush-demo"></span>
+            <span>Selected range</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- TOOLTIP COMPONENT -->
+    <div id="tip" role="tooltip"></div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>INFO3171 User Interface &amp; Data Visualization</p>
+    <p>Malcolm Grace, Jeff Eidsness, Mariana Parada, Sarah McDermid</p>
+    <p>&copy; 2026 DailyTube</p>
+  </footer>
+</body>
+
 </html>
+<script>
+  const kpiData = [
+    { kpi: "Total Views", value: "2.4", unit: "Billion", change: "+12%", status: "Up", icon: "👁" },
+    { kpi: "Total Uploads", value: "14,200", unit: "Videos", change: "+5%", status: "Up", icon: "⬆" },
+    { kpi: "Avg Watch Time", value: "8.3", unit: "Minutes", change: "-1%", status: "Down", icon: "⏱" },
+    { kpi: "Subscriber Growth", value: "480", unit: "Thousand", change: "+18%", status: "Up", icon: "👥" },
+    { kpi: "Engagement Rate", value: "7.6", unit: "%", change: "+0.4%", status: "Up", icon: "❤" },
+    { kpi: "Revenue per 1K views", value: "$3.42", unit: "USD", change: "-2%", status: "Down", icon: "$" }
+  ];
+  (function () {
+    var data = [
+      { name: "Music", value: 420 },
+      { name: "Gaming", value: 310 },
+      { name: "Education", value: 195 },
+      { name: "News", value: 150 },
+      { name: "Comedy", value: 280 },
+      { name: "Sports", value: 230 }
+    ];
+    var colors = ["#FFBD59", "#E07B2A", "#A84C0C", "#FFD98A", "#C98A00", "#3A3A3C"];
+
+    var axisMax = 500, step = 100;
+    var X0 = 60, X1 = 590, Y0 = 240, H = 200;
+    var slot = (X1 - X0) / data.length;
+
+    var svg = document.getElementById("svg1");
+    var info = document.getElementById("info1");
+    var tip = document.getElementById("tip");
+    var legend = document.getElementById("legend1");
+    var clearBtn = document.getElementById("clear1");
+    var DEFAULT_TEXT = info.textContent;
+    var hidden = {};       // categories hidden by the legend
+    var brush = null;      // [firstBar, lastBar] or null
+    var dragFrom = null;   // bar where the drag started
+
+    function catAt(e) {
+      var r = svg.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width * 600;
+      return Math.max(0, Math.min(data.length - 1, Math.floor((px - X0) / slot)));
+    }
+
+    function draw() {
+      var h = "", v, y;
+      for (v = 0; v <= axisMax; v += step) {
+        y = Y0 - v / axisMax * H;
+        h += '<line x1="' + X0 + '" x2="' + X1 + '" y1="' + y + '" y2="' + y + '" stroke="#8c8c8c"/>';
+        h += '<text x="' + (X0 - 8) + '" y="' + (y + 4) + '" text-anchor="end" font-size="11" fill="#333">' + v + '</text>';
+      }
+      h += '<line x1="' + X0 + '" x2="' + X0 + '" y1="' + (Y0 - H) + '" y2="' + Y0 + '" stroke="#8c8c8c"/>';
+      h += '<text x="14" y="' + (Y0 - H / 2) + '" transform="rotate(-90 14 ' + (Y0 - H / 2) + ')" text-anchor="middle" font-size="11" font-weight="700">Views (M)</text>';
+      h += '<text x="' + ((X0 + X1) / 2) + '" y="288" text-anchor="middle" font-size="11" font-weight="700">Category</text>';
+
+      // Brush highlight band (drawn behind the bars)
+      if (brush) {
+        h += '<rect class="brush-sel" x="' + (X0 + brush[0] * slot) + '" y="' + (Y0 - H) + '" width="' + ((brush[1] - brush[0] + 1) * slot) + '" height="' + H + '"/>';
+      }
+
+      data.forEach(function (d, i) {
+        h += '<text x="' + (X0 + i * slot + slot / 2) + '" y="' + (Y0 + 18) + '" text-anchor="middle" font-size="11" fill="#333">' + d.name + '</text>';
+        if (hidden[i]) return;                                   // hidden by the legend
+        var bh = d.value / axisMax * H;
+        var dim = brush && (i < brush[0] || i > brush[1]);       // fade bars outside the brush
+        h += '<rect class="pt" data-i="' + i + '" x="' + (X0 + i * slot + slot * 0.3) + '" y="' + (Y0 - bh) +
+          '" width="' + (slot * 0.4) + '" height="' + bh + '" fill="' + colors[i] + '" fill-opacity="' + (dim ? 0.35 : 1) + '"/>';
+      });
+
+      svg.innerHTML = h;
+      readout();
+    }
+
+    function readout() {
+      if (!brush) { info.textContent = DEFAULT_TEXT; clearBtn.hidden = true; return; }
+      clearBtn.hidden = false;
+      var a = brush[0], b = brush[1];
+      if (a === b) {
+        info.innerHTML = "<strong>" + data[a].name + " selected</strong> · " + (hidden[a] ? "hidden in legend" : data[a].value + " M views");
+        return;
+      }
+      var sum = 0, n = 0, i;
+      for (i = a; i <= b; i++) { if (!hidden[i]) { sum += data[i].value; n++; } }
+      info.innerHTML = "<strong>" + data[a].name + " to " + data[b].name + " selected</strong> · Total " + sum +
+        " M · Average " + (n ? Math.round(sum / n) : 0) + " M views";
+    }
+
+    // Brush: press, drag, release (a single click selects one bar)
+    svg.addEventListener("pointerdown", function (e) {
+      dragFrom = catAt(e);
+      brush = [dragFrom, dragFrom];
+      svg.setPointerCapture(e.pointerId);
+      tip.style.display = "none";
+      draw();
+    });
+    svg.addEventListener("pointermove", function (e) {
+      if (dragFrom !== null) {
+        var c = catAt(e);
+        brush = [Math.min(dragFrom, c), Math.max(dragFrom, c)];
+        draw();
+        return;
+      }
+      var b = e.target.closest(".pt");                           // tooltip on hover
+      if (!b) { tip.style.display = "none"; return; }
+      var d = data[b.getAttribute("data-i")];
+      tip.innerHTML = "<b>" + d.name + "</b>" + d.value + " M views";
+      tip.style.display = "block";
+      tip.style.left = (e.clientX + 12) + "px";
+      tip.style.top = (e.clientY - 50) + "px";
+    });
+    svg.addEventListener("pointerup", function () { dragFrom = null; });
+    svg.addEventListener("pointerleave", function () { tip.style.display = "none"; });
+    svg.addEventListener("dblclick", function () { brush = null; draw(); });
+    clearBtn.addEventListener("click", function () { brush = null; draw(); });
+
+    // Interactive legend: click to hide / show a category
+    data.forEach(function (d, i) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.setAttribute("aria-pressed", "true");
+      btn.style.setProperty("--c", colors[i]);
+      btn.innerHTML = '<span class="dot"></span>' + d.name;
+      btn.addEventListener("click", function () {
+        hidden[i] = !hidden[i];
+        btn.setAttribute("aria-pressed", String(!hidden[i]));
+        draw();
+      });
+      legend.appendChild(btn);
+    });
+
+    draw();
+  })();
+
+
+  function renderDashboardKPIs(data) {
+    const container = document.getElementById("kpi-container");
+
+    container.innerHTML = data.map(item => {
+      const isUp = item.status.toLowerCase() === "up";
+      const statusClass = isUp ? "up" : "down";
+      const arrow = isUp ? "▲" : "▼";
+
+      return `
+      <article class="kpi-card">
+        <div class="kpi-header">
+          <h3 class="kpi-title">${item.kpi}</h3>
+          <div class="kpi-icon">${item.icon}</div>
+        </div>
+        <div class="kpi-main">
+          <span class="kpi-value">${item.value}</span>
+          <span class="kpi-unit">${item.unit}</span>
+        </div>
+        <div class="kpi-footer">
+          <span class="kpi-badge ${statusClass}">${arrow} ${item.change}</span>
+          <span class="kpi-period">vs Last Period</span>
+        </div>
+      </article>
+    `;
+    }).join("");
+  }
+
+  renderDashboardKPIs(kpiData);
+
+</script>
